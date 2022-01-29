@@ -3,6 +3,8 @@ require('dotenv').config({ path: './.env' });
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
 const web3 = new Web3();
+// const web3 = new Web3("https://rpc.moonriver.moonbeam.network"); // moonriver
+// const web3 = new Web3('https://rpc.api.moonbase.moonbeam.network');  // moonbase alpha
 const MetaMaskAccountIndex = 0;
 // const privateKeyTest = process.env.privateKeyTest;
 // const privateKeyMoonriver=process.env.privateKeyMoonriver;
@@ -57,26 +59,31 @@ module.exports = {
       networkCheckTimeout: 999999,
       skipDryRun: true
     },
-  //   moonriverDev: {
-  //     provider: () => {
-  //       //  ...
-  //        return new HDWalletProvider(privateKeyDev, 'http://127.0.0.1:9933')
-  //     },
-  //     network_id: 1281,  // 0x501 in hex,
-  //  },
+    // moonriverDev: {
+    //   provider: () => {
+    //     //  ...
+    //      return new HDWalletProvider(privateKeyDev, 'http://127.0.0.1:9933')
+    //   },
+    //   network_id: 1281,  // 0x501 in hex,
+    // },
     // moonriverRPC: {
     //   provider: () => {
     //     //  ...
     //      return new HDWalletProvider(privateKeyMoonriver, 'https://rpc.moonriver.moonbeam.network') // Insert your private key here
+    //      // https://rpc.moonriver.moonbeam.network // https
+    //      // wss://wss.moonriver.moonbeam.network // wss
     //   },
-    //   network_id: 1285,
+    //   network_id: 1285
     // },
     // moonbase: {
     //   provider: () => {
     //     //  ...
     //      return new HDWalletProvider(privateKeyMoonbase, 'https://rpc.testnet.moonbeam.network') // Insert your private key here
+    //      // https://rpc.testnet.moonbeam.network // originial config ???
+    //      // https://rpc.api.moonbase.moonbeam.network  // rpc for moonbase alpha
+    //      // wss://wss.api.moonbase.moonbeam.network // wss
     //   },
-    //   network_id: 1287// (hex: 0x507),
+    //   network_id: 1287 // (hex: 0x507),
     // },
     // testnetHar: {
     //   provider: () => {
